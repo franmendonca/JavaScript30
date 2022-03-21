@@ -1,6 +1,6 @@
 html {
   font-size: 10px;
-  background: url('./background.jpg') bottom center;
+  background: url('./background2.jpg') bottom center;
   background-size: cover;
 }
 
@@ -10,10 +10,18 @@ body,html {
   font-family: sans-serif;
 }
 
+h1 {
+font-size: 36px;
+color: white;
+text-align: center;
+margin-top: 20vh;
+font-family: monospace;
+}
+
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 80vh;
   align-items: center;
   justify-content: center;
 }

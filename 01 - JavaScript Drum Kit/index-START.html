@@ -7,7 +7,9 @@
 </head>
 <body>
 
-
+  <div>
+    <h1>JS Drumkit</h1>
+  </div>
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
@@ -58,14 +60,15 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-  window.addEventListener('keydown', function(e){
+
+  function playSound(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     key.classList.add('playing');
     if (!audio) return; //stop function from running
     audio.currentTime = 0; // rewind to start
     audio.play();
-  });
+  };
 
   function removeTransition(e) {
     if(e.propertyName != 'transform') return; // skip if it's not transform
@@ -73,6 +76,7 @@
   };
   const keys = document.querySelectorAll('.key');
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown',playSound);
 </script>
 
 </body>
